@@ -7,9 +7,7 @@
 FROM ubuntu:12.04
 MAINTAINER Paul Czarkowski "paul@paulcz.net"
 
-RUN apt-get update
-
-RUN apt-get -y install apache2
+RUN apt-get update && apt-get -y install apache2
 
 env APACHE_RUN_USER    www-data
 env APACHE_RUN_GROUP   www-data
