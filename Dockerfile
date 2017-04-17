@@ -19,4 +19,7 @@ env APACHE_LOCK_DIR    /var/lock/apache2
 env APACHE_LOG_DIR     /var/log/apache2
 env LANG               C
 
+RUN echo 'ServerName localhost' > /etc/apache2/conf-available/server-name.conf
+RUN a2enconf server-name
+
 CMD ["apache2", "-D", "FOREGROUND"]
